@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Certified Developer – Foundations (CCDV-F) Practice Exams</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app" role="application">
+  <noscript>This application requires JavaScript to run.</noscript>
+</div>
+
+<script>
+  // Install a global error handler BEFORE paper scripts load, so a syntax/
+  // runtime error in one bad paper file never breaks the rest of the app.
+  window.__paperLoadErrors = window.__paperLoadErrors || {};
+  window.onerror = function (message, source, lineno, colno, error) {
+    try {
+      var m = /paper(\d{2})\.js/.exec(source || "");
+      if (m) {
+        window.__paperLoadErrors[Number(m[1])] = String(message);
+      }
+      console.error("Swallowed script error:", message, source, lineno, colno);
+    } catch (e) { /* ignore */ }
+    return true; // prevent default handling / console noise from halting app
+  };
+  window.EXAM_PAPERS = window.EXAM_PAPERS || {};
+</script>
+
+<script src="papers/paper01.js" onerror="window.__paperLoadErrors[1]='404'"></script>
+<script src="papers/paper02.js" onerror="window.__paperLoadErrors[2]='404'"></script>
+<script src="papers/paper03.js" onerror="window.__paperLoadErrors[3]='404'"></script>
+<script src="papers/paper04.js" onerror="window.__paperLoadErrors[4]='404'"></script>
+<script src="papers/paper05.js" onerror="window.__paperLoadErrors[5]='404'"></script>
+<script src="papers/paper06.js" onerror="window.__paperLoadErrors[6]='404'"></script>
+<script src="papers/paper07.js" onerror="window.__paperLoadErrors[7]='404'"></script>
+<script src="papers/paper08.js" onerror="window.__paperLoadErrors[8]='404'"></script>
+<script src="papers/paper09.js" onerror="window.__paperLoadErrors[9]='404'"></script>
+<script src="papers/paper10.js" onerror="window.__paperLoadErrors[10]='404'"></script>
+
+<script src="js/domains.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
